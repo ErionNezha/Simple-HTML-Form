@@ -1,0 +1,51 @@
+<!-- Created by Erion Nezha — © 2026 All rights reserved -->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Cssdoodler-form</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="container">  
+  <form id="contact" action="" method="post">
+    <h3>Cssdoodler Contact Form</h3>
+    <fieldset>
+      <input placeholder="Full name" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Email Address" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Phone Number" type="tel" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Website" type="url" tabindex="4" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Comment here...." tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+</div>
+<footer style="position:fixed;bottom:8px;right:10px;z-index:9999;font-size:11px;color:#9fb3c8;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:8px;font-family:'Segoe UI',system-ui,sans-serif;pointer-events:none;">Krijuar nga Erion Nezha</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('contact');
+  if (!form) return;
+  var msg = document.createElement('p');
+  msg.style.cssText = 'text-align:center;color:#4CAF50;font-weight:bold;margin:10px 0;';
+  form.appendChild(msg);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    msg.textContent = '✔ Faleminderit! Mesazhi yt u dërgua (demo).';
+    form.querySelectorAll('input,textarea').forEach(function (el) { el.value = ''; });
+  });
+});
+</script>
+
+</body>
+</html>
